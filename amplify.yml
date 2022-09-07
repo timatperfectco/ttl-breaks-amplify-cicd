@@ -25,7 +25,6 @@ backend:
 #        - npm i -g graphql-ttl-transformer
 #        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # yup, thar she blows!
 # The following is a hack to get around the above: that "global"
-        - npm init -y --prefix /root/.amplify/lib
         - npm i graphql-ttl-transformer amplify-prompts@^2.0.1 --prefix /root/.amplify/lib
 #        - ls -l /root/.amplify/lib/node_modules
         - npm ci
