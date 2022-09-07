@@ -11,14 +11,17 @@ backend:
         - which node # /root/.nvm/versions/node/v14.19.0/bin/node
         - grep -C10 graphql-ttl-transformer package.json
         - pwd # gives /codebuild/output/src310185149/src/ttl-breaks-amplify-cicd
+# From build:
+# Error: Cannot find module '/root/.amplify/lib/node_modules/graphql-ttl-transformer'
 # fails with  cannot access /root/.amplify/lib/node_modules/: No such file or directory:
 #        - ls -l /root/.amplify/lib/node_modules/
         - ls -l /root
         - ls -l /root/.amplify
-        - ls -l /root/.amplify/lib
-        - ls -l /root/.nvm/versions/node/v14.19.0/lib
+        - ls -l /root/.amplify/lib # gives a number of subdirs, like:
+        - ls -l /root/.amplify/lib/amplify-dynamodb-simulator
+        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules
         - npm i -g graphql-ttl-transformer
-        - ls -l /root/.nvm/versions/node/v14.19.0/lib
+        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules
         - npm i graphql-ttl-transformer
         - amplifyPush --simple
 frontend:
