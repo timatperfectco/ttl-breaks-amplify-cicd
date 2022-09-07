@@ -3,9 +3,9 @@ backend:
   phases:
     build:
       commands:
+        - npm i -g graphql-ttl-transformer
         - npm ci
-        - echo ls node_modules
-        - ls node_modules
+        - amplifyPush --simple
 frontend:
   phases:
     # IMPORTANT - Please verify your build commands
