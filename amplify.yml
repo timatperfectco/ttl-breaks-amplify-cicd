@@ -1,14 +1,17 @@
 version: 1
-#backend:
-#  phases:
-#    build:
-#      commands:
-#        - npm --version
-#        - amplify --version
-#        - node --version
-#        - npm i -g graphql-ttl-transformer
-#        - npm i --save-dev graphql-ttl-transformer
-#        - amplifyPush --simple
+backend:
+  phases:
+    build:
+      commands:
+        - npm --version
+        - amplify --version
+        - node --version
+        - which npm
+        - which amplify
+        - which node
+        - npm i -g graphql-ttl-transformer
+        - npm i --save-dev graphql-ttl-transformer
+        - amplifyPush --simple
 frontend:
   phases:
     # IMPORTANT - Please verify your build commands
