@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/timatperfectco/ttl-breaks-amplify-cicd/issues"
   },
-  "homepage": "https://github.com/timatperfectco/ttl-breaks-amplify-cicd#readme"
+  "homepage": "https://github.com/timatperfectco/ttl-breaks-amplify-cicd#readme",
+  "dependencies": {
+    "graphql-ttl-transformer": "^2.0.0"
+  }
 }
