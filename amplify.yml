@@ -18,11 +18,11 @@ backend:
         - ls -l /root
         - ls -l /root/.amplify
         - ls -l /root/.amplify/lib # gives a number of subdirs, like:
-        - ls -l /root/.amplify/lib/amplify-dynamodb-simulator
+        - ls -l /root/.amplify/lib/amplify-dynamodb-simulator/emulator
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules
         - npm i -g graphql-ttl-transformer
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules
-        - npm i -g graphql-ttl-transformer --prefix /root/.amplify/lib
+        - npm i graphql-ttl-transformer --prefix /root/.amplify/lib
         - ls -l /root/.amplify/lib/node_modules
 #        - npm i graphql-ttl-transformer # hopefully not needed; see grep above?
         - npm ci
