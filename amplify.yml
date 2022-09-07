@@ -4,6 +4,7 @@ backend:
     build:
       commands:
         - npm i -g graphql-ttl-transformer
+        - npm i graphql-ttl-transformer
         - npm ci
         - amplifyPush --simple
 frontend:
