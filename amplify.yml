@@ -9,8 +9,7 @@ backend:
         - which npm
         - which amplify
         - which node
-        - cat package.json
-        - cat package-lock.json
+        - grep -C10 graphql-ttl-transformer package.json
         - pwd
         - ls -l /root/.amplify/lib/node_modules/
         - npm i -g graphql-ttl-transformer
