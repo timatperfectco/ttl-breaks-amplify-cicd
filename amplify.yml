@@ -16,8 +16,9 @@ backend:
         - ls -l /root
         - ls -l /root/.amplify
         - ls -l /root/.amplify/lib
-        - ls -l /root/.nvm/versions/node/v14.19.0
+        - ls -l /root/.nvm/versions/node/v14.19.0/lib
         - npm i -g graphql-ttl-transformer
+        - ls -l /root/.nvm/versions/node/v14.19.0/lib
         - npm i graphql-ttl-transformer
         - amplifyPush --simple
 frontend:
