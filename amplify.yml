@@ -3,6 +3,8 @@ backend:
   phases:
     build:
       commands:
+        - npm --version
+        - amplify --version
         - npm i -g graphql-ttl-transformer
         - npm ci
         - amplifyPush --simple
