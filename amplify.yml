@@ -3,31 +3,31 @@ backend:
   phases:
     build:
       commands:
-        - npm --version # 6.14.16
-        - amplify --version # 10.0.0
-        - node --version # v14.19.0
-        - which npm # /root/.nvm/versions/node/v14.19.0/bin/npm
-        - which amplify # /root/.nvm/versions/node/v14.19.0/bin/amplify
-        - which node # /root/.nvm/versions/node/v14.19.0/bin/node
-        - grep -C10 graphql-ttl-transformer package.json
-        - pwd # gives /codebuild/output/src310185149/src/ttl-breaks-amplify-cicd
+#        - npm --version # 6.14.16
+#        - amplify --version # 10.0.0
+#        - node --version # v14.19.0
+#        - which npm # /root/.nvm/versions/node/v14.19.0/bin/npm
+#        - which amplify # /root/.nvm/versions/node/v14.19.0/bin/amplify
+#        - which node # /root/.nvm/versions/node/v14.19.0/bin/node
+#        - grep -C10 graphql-ttl-transformer package.json
+#        - pwd # gives /codebuild/output/src310185149/src/ttl-breaks-amplify-cicd
 # From build:
 # Error: Cannot find module '/root/.amplify/lib/node_modules/graphql-ttl-transformer'
 # fails with  cannot access /root/.amplify/lib/node_modules/: No such file or directory:
 #        - ls -l /root/.amplify/lib/node_modules/
-        - ls -l /root
-        - ls -l /root/.amplify
-        - cat /root/.amplify/amplify-configuration.json
-        - ls -l /root/.amplify/bin
-        - ls -l /root/.amplify/lib # gives a number of subdirs, like:
-        - ls -l /root/.amplify/lib/amplify-dynamodb-simulator/emulator
-        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # no graphql-ttl-transformer
-        - npm i -g graphql-ttl-transformer
-        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # yup, thar she blows!
+#        - ls -l /root
+#        - ls -l /root/.amplify
+#        - cat /root/.amplify/amplify-configuration.json
+#        - ls -l /root/.amplify/bin
+#        - ls -l /root/.amplify/lib # gives a number of subdirs, like:
+#        - ls -l /root/.amplify/lib/amplify-dynamodb-simulator/emulator
+#        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # no graphql-ttl-transformer
+#        - npm i -g graphql-ttl-transformer
+#        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # yup, thar she blows!
+# The following is a hack to get around the above: that "global"
         - npm init -y --prefix /root/.amplify/lib
         - npm i graphql-ttl-transformer amplify-prompts@^2.0.1 --prefix /root/.amplify/lib
-        - ls -l /root/.amplify/lib/node_modules
-#        - npm i graphql-ttl-transformer # hopefully not needed; see grep above?
+#        - ls -l /root/.amplify/lib/node_modules
         - npm ci
         - amplifyPush --simple
 frontend:
