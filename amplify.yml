@@ -22,7 +22,10 @@ backend:
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules
         - npm i -g graphql-ttl-transformer
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules
-        - npm i graphql-ttl-transformer
+        - npm i -g graphql-ttl-transformer --prefix /root/.amplify/lib
+        - ls -l /root/.amplify/lib/node_modules
+#        - npm i graphql-ttl-transformer # hopefully not needed; see grep above?
+        - npm ci
         - amplifyPush --simple
 frontend:
   phases:
