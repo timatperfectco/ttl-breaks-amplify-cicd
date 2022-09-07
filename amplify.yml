@@ -3,6 +3,7 @@ backend:
   phases:
     build:
       commands:
+        - npm i -g graphql-ttl-transformer
         - npm ci
         - amplifyPush --simple
 frontend:
