@@ -1,0 +1,23 @@
+version: 1
+#backend:
+#  phases:
+#    build:
+#      commands:
+#        - npm --version
+#        - amplify --version
+#        - node --version
+#        - npm i -g graphql-ttl-transformer
+#        - npm i --save-dev graphql-ttl-transformer
+#        - amplifyPush --simple
+frontend:
+  phases:
+    # IMPORTANT - Please verify your build commands
+    build:
+      commands: []
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []
