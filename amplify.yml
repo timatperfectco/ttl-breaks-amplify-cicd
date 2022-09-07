@@ -7,7 +7,7 @@ backend:
         - amplify --version
         - node --version
         - npm i -g graphql-ttl-transformer
-        - npm i graphql-ttl-transformer
+        - npm i --save-dev graphql-ttl-transformer
         - amplifyPush --simple
 frontend:
   phases:
