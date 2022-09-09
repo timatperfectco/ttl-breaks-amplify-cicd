@@ -10,9 +10,12 @@ backend:
         - which amplify # /root/.nvm/versions/node/v14.19.0/bin/amplify
         - which node # /root/.nvm/versions/node/v14.19.0/bin/node
         - nvm use $VERSION_NODE_16
-        - which npm # what is it now, on node 16, and is this enough to succeed??
-        - which amplify # ?
-        - which node # ?
+        - which npm # /root/.nvm/versions/node/v16.13.2/bin/npm
+        - which amplify # /root/.nvm/versions/node/v16.13.2/bin/amplify
+        - which node # /root/.nvm/versions/node/v16.13.2/bin/node
+        - npm --version # ?
+        - amplify --version # ?
+        - node --version # ?
         - grep -C10 graphql-ttl-transformer package.json
         - pwd # gives /codebuild/output/src310185149/src/ttl-breaks-amplify-cicd
 # From build:
@@ -30,7 +33,7 @@ backend:
 #        - npm i -g graphql-ttl-transformer
 #        - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # yup, thar she blows!
 #        - npm install -g npm@latest
-        - npm ci
+        - npm ci # gives "Invalid feature flag configuration" under nvm use $VERSION_NODE_16
         # The following is a hack to get around the above: that "global"
         # commented-out for now, to check if it works given the new which npm above
         #        - npm i graphql-ttl-transformer amplify-prompts@^2.0.1 --prefix /root/.amplify/lib
