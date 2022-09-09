@@ -14,7 +14,7 @@ backend:
 # From build:
 # Error: Cannot find module '/root/.amplify/lib/node_modules/graphql-ttl-transformer'
 # fails with  cannot access /root/.amplify/lib/node_modules/: No such file or directory:
-        - ls -l /root/.amplify/lib/node_modules/
+#        - ls -l /root/.amplify/lib/node_modules/
         - ls -l /root
         - ls -l /root/.amplify
         - cat /root/.amplify/amplify-configuration.json
@@ -24,10 +24,14 @@ backend:
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # no graphql-ttl-transformer
         - npm i -g graphql-ttl-transformer
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # yup, thar she blows!
-# The following is a hack to get around the above: that "global"
-        - npm i graphql-ttl-transformer amplify-prompts@^2.0.1 --prefix /root/.amplify/lib
         - ls -l /root/.amplify/lib/node_modules
+        - which npm # should still be /root/.nvm/versions/node/v14.19.0/bin/npm
+        - npm install -g npm@latest
+        - which npm # what is it?
         - npm ci
+        # The following is a hack to get around the above: that "global"
+        # commented-out for now, to check if it works given the new which npm above
+        #        - npm i graphql-ttl-transformer amplify-prompts@^2.0.1 --prefix /root/.amplify/lib
         - amplifyPush --simple
 frontend:
   phases:
