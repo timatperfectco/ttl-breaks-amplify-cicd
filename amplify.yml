@@ -24,7 +24,6 @@ backend:
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # no graphql-ttl-transformer
         - npm i -g graphql-ttl-transformer
         - ls -l /root/.nvm/versions/node/v14.19.0/lib/node_modules # yup, thar she blows!
-        - ls -l /root/.amplify/lib/node_modules
         - which npm # should still be /root/.nvm/versions/node/v14.19.0/bin/npm
         - npm install -g npm@latest
         - which npm # what is it?
